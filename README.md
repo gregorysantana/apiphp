@@ -3,34 +3,14 @@ Para manejar una API en PHP, puedes crear una función que realice las operacion
 
 A continuación te muestro un ejemplo de cómo podrías implementar esto en PHP
 
-<code>
-// Función para manejar una API
-function handleApi($url, $method, $data = array()) {
-  // Inicializar cURL
-  $ch = curl_init();
+Función para manejar una API
 
-  // Configurar la URL de la API
-  curl_setopt($ch, CURLOPT_URL, $url);
+<code>handleApi($url, $method, $data = array());</code>
 
-  // Configurar el método de solicitud (POST, GET, PUT, etc.)
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+En este ejemplo, la función <code>handleApi()</code> toma como parámetros la URL de la API, el método de solicitud <code>(POST, GET, PUT, etc.)</code> y opcionalmente un array de datos a enviar a la API. Utiliza la función <code>curl_exec()</code> de PHP para enviar la solicitud a la API y devuelve la respuesta.
 
-  // Configurar los datos a enviar a la API (si se especifican)
-  if (!empty($data)) {
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-  }
+Para usar esta función, simplemente puedes llamarla proporcionando la URL de la API, el método de solicitud y, opcionalmente, los datos a enviar, como se muestra a continuación en la pagina de ejemplo.
 
-  // Configurar para que la función devuelva la respuesta en lugar de mostrarla directamente
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+En este ejemplo, se llama a la función <code>handleApi()</code> con la URL de la API, el método de solicitud (POST) y los datos a enviar. 
 
-  // Ejecutar la solicitud cURL
-  $response = curl_exec($ch);
-
-  // Cerrar la sesión cURL
-  curl_close($ch);
-
-  // Devolver la respuesta de la API
-  return $response;
-}
-
-</code>
+Luego, se procesa la respuesta de la API utilizando la función <code>json_dec</code>
