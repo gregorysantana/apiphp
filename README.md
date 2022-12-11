@@ -1,4 +1,4 @@
-# Manejo de API con PHP
+# Manejo de API sencilla con PHP
 Para manejar una API en PHP, puedes crear una función que realice las operaciones necesarias para interactuar con la API y procesar la respuesta.
 
 A continuación te muestro un ejemplo de cómo podrías implementar esto en PHP
